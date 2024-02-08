@@ -2,6 +2,9 @@ import { httpBatchLink } from '@trpc/client';
 import { createTRPCNext } from '@trpc/next';
 import type { AppRouter } from '~/server/routers/_app';
 
+// TODO: uncomment
+// import type { API } from 'types/api';
+
 function getBaseUrl() {
   if (typeof window !== 'undefined') {
     // In the browser, we return a relative URL
@@ -18,6 +21,8 @@ function getBaseUrl() {
   return `http://localhost:${process.env.PORT ?? 3000}`;
 }
 
+// TODO: uncomment
+// export const trpc = createTRPCNext<API>({
 export const trpc = createTRPCNext<AppRouter>({
   config() {
     return {

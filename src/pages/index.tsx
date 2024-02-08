@@ -4,8 +4,7 @@
 import { trpc } from '../utils/trpc';
 
 export default function IndexPage() {
-  // 💡 Tip: CMD+Click (or CTRL+Click) on `greeting` to go to the server definition
-  const result = trpc.router99.greeting.useQuery({ who: 'KATT' });
+  const result = trpc.router99.greeting.useQuery({} as any);
 
   if (!result.data) {
     return (
